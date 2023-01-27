@@ -1,20 +1,32 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectCounter } from "./features/counter/CounterSlice";
+import { incByAmount, resetInitial } from "./features/counter/CounterSlice";
 
 import "./App.css";
 
 function App() {
   const count = useSelector(selectCounter);
+  const dispatch = useDispatch();
 
-  const minusFive = () => {};
+  const minusFive = () => {
+    dispatch(incByAmount(-5));
+  };
 
-  const minusOne = () => {};
+  const minusOne = () => {
+    dispatch(incByAmount(-1));
+  };
 
-  const reset = () => {};
+  const reset = () => {
+    dispatch(resetInitial());
+  };
 
-  const plusOne = () => {};
+  const plusOne = () => {
+    dispatch(incByAmount(1));
+  };
 
-  const plusFive = () => {};
+  const plusFive = () => {
+    dispatch(incByAmount(5));
+  };
 
   return (
     <div className="App">

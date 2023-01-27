@@ -7,17 +7,20 @@ export const counterSlice = createSlice({
   },
   reducers: {
     // There shouldn't be anything in it aside from changing the state
-    increment: (state) => {
+    incByAmount: (state, action) => {
       // Toolkit handles mutation issues
-      state.value += 1;
+      state.value += action.payload;
+    },
+    resetInitial: (state) => {
+      state.value = 1000;
     },
   },
 });
 
 // Exporting reducers
 // Telling which reducer is tied to the action
-export const { increment } = counterSlice.actions;
-export const selectCounter = (state) => state.counter.value;
+export const { incByAmount, resetInitial } = counterSlice.actions; // connecting with actions - needed for events
+export const selectCounter = (state) => state.counter.value; // for showing the value
 
 // This is future counterReducer
-export default counterSlice.reducer;
+export default counterSlice.reducer; // for store

@@ -1,6 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { selectCounter } from "./features/counter/CounterSlice";
-import { incByAmount, resetInitial } from "./features/counter/CounterSlice";
+import {
+  selectCounter,
+  incByAmount,
+  resetInitial,
+} from "./features/counter/CounterSlice";
 
 import "./App.css";
 

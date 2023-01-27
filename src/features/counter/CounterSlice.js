@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const counterSlice = createSlice({
   name: "counter",
   initialState: {
-    value: 0,
+    value: 1000,
   },
   reducers: {
     // There shouldn't be anything in it aside from changing the state
@@ -15,7 +15,9 @@ export const counterSlice = createSlice({
 });
 
 // Exporting reducers
+// Telling which reducer is tied to the action
 export const { increment } = counterSlice.actions;
-export const selectCount = (state) => state.counter.value;
+export const selectCounter = (state) => state.counter.value;
 
+// This is future counterReducer
 export default counterSlice.reducer;

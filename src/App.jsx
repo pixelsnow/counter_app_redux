@@ -1,29 +1,20 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { selectCounter } from "./features/counter/CounterSlice";
 
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const count = useSelector(selectCounter);
 
-  const minusFive = () => {
-    setCount((count) => count - 5);
-  };
+  const minusFive = () => {};
 
-  const minusOne = () => {
-    setCount((count) => count - 1);
-  };
+  const minusOne = () => {};
 
-  const reset = () => {
-    setCount(0);
-  };
+  const reset = () => {};
 
-  const plusOne = () => {
-    setCount((count) => count + 1);
-  };
+  const plusOne = () => {};
 
-  const plusFive = () => {
-    setCount((count) => count + 5);
-  };
+  const plusFive = () => {};
 
   return (
     <div className="App">

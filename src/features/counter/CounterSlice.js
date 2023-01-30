@@ -20,6 +20,7 @@ export const counterSlice = createSlice({
 // Exporting reducers
 // Telling which reducer is tied to the action
 export const { incByAmount, resetInitial } = counterSlice.actions; // connecting with actions - needed for events
+// state.counter here refers to reducers object in Store
 export const selectCounter = (state) => state.counter.value; // for showing the value
 
 // This is future counterReducer
